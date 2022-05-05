@@ -1,0 +1,182 @@
+CCSD3ZF0000100000001NJPL3IF0PDS200000001 = SFDU_LABEL                         
+                                                                              
+RECORD_TYPE                    = FIXED_LENGTH                                 
+RECORD_BYTES                   = 117                                          
+FILE_RECORDS                   = 2852                                         
+INTERCHANGE_FORMAT             = ASCII                                        
+                                                                              
+^TABLE                         = "MGN_RTPD.DAT"                               
+                                                                              
+DATA_SET_ID                    = "MGN-V-RSS-5-OCC-PROF-RTPD-V1.0          "   
+                                                                              
+DESCRIPTION                    =                                              
+     "This file was produced by the PDS Atmospheres node using PANDA from     
+      dataset MGN-V-RSS-5-OCC-PROF-RTPD-V1.0 for user LEE on 28-Jun-1996      
+      21:51:44.00 using the following SQL query against the Atmospheres       
+      database: SELECT DISTINCT * FROM V_MGN_REFRAC WHERE  (ORBIT_NUMBER      
+      = 3212 OR   ORBIT_NUMBER = 3213 OR   ORBIT_NUMBER = 3214)"              
+                                                                              
+/* Table Description */                                                       
+                                                                              
+OBJECT                         = TABLE                                        
+    NAME                       = PANDA_QUERY_RESULT                           
+    INTERCHANGE_FORMAT         = ASCII                                        
+    COLUMNS                    = 16                                           
+    ROWS                       = 2852                                         
+    ROW_BYTES                  = 118                                          
+    OBJECT                      = COLUMN                                      
+        NAME                    = "WAVELENGTH"                                
+        DATA_TYPE               = CHARACTER                                   
+        BYTES                   = 3                                           
+        START_BYTE              = 1                                           
+        FORMAT                  = "A3"                                        
+        DESCRIPTION             =                                             
+       "Radio carrier wavelength (S or X) where S is the S-band (13 cm        
+        wavelength or 2.298 GHz frequency) and X is the X-band (3.6 cm        
+        wavelength or 8.426 GHz frequency)."                                  
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "ORBIT_NUMBER"                              
+        DATA_TYPE               = ASCII_INTEGER                               
+        BYTES                   = 5                                           
+        START_BYTE              = 4                                           
+        FORMAT                  = "I5"                                        
+        DESCRIPTION             =                                             
+       "Orbit number (3212, 3213, 3214)."                                     
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "ALTITUDE"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 7                                           
+        START_BYTE              = 9                                           
+        FORMAT                  = "F7.3"                                      
+        DESCRIPTION             =                                             
+       "Altitude above 6052 km, km.  (Note that this reference surface is     
+        one km higher than the 6051 km Venus radius adopted by the MGN        
+        project)."                                                            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "REFRACTIVITY"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 9                                           
+        START_BYTE              = 16                                          
+        FORMAT                  = "F9.3"                                      
+        DESCRIPTION             =                                             
+       "Refractivity, N-units [(index of refraction -1) * 10**6]."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "REFRACT_DEV"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 6                                           
+        START_BYTE              = 25                                          
+        FORMAT                  = "F6.3"                                      
+        DESCRIPTION             =                                             
+       "Refractivity standard deviation, N-units [(index of refraction -1)    
+        * 10**6]."                                                            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMPERATURE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 7                                           
+        START_BYTE              = 31                                          
+        FORMAT                  = "F7.2"                                      
+        DESCRIPTION             =                                             
+       "Temperature, K."                                                      
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_DEV"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 6                                           
+        START_BYTE              = 38                                          
+        FORMAT                  = "F6.2"                                      
+        DESCRIPTION             =                                             
+       "Temperature standard deviation, K."                                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "PRESSURE"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 9                                           
+        START_BYTE              = 44                                          
+        FORMAT                  = "F9.6"                                      
+        DESCRIPTION             =                                             
+       "Pressure, bar."                                                       
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "PRESS_DEV"                                 
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 9                                           
+        START_BYTE              = 53                                          
+        FORMAT                  = "F9.6"                                      
+        DESCRIPTION             =                                             
+       "Pressure standard deviation, bar."                                    
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "DENSITY"                                   
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 62                                          
+        FORMAT                  = "F8.5"                                      
+        DESCRIPTION             =                                             
+       "Density, kg/m**3."                                                    
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "DENS_DEV"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 70                                          
+        FORMAT                  = "F8.5"                                      
+        DESCRIPTION             =                                             
+       "Density standard deviation, kg/m**3."                                 
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "LATITUDE"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 7                                           
+        START_BYTE              = 78                                          
+        FORMAT                  = "F7.3"                                      
+        DESCRIPTION             =                                             
+       "Latitude at the proximate point (the deepest level of the             
+        atmosphere probed by the radio beam), deg (North is positive)."       
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "LONGITUDE"                                 
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 85                                          
+        FORMAT                  = "F8.3"                                      
+        DESCRIPTION             =                                             
+       "East longitude (Venus body-fixed) at the proximate point (the         
+        deepest level of the atmosphere probed by the radio beam), deg."      
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "ZENITH_ANGLE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 93                                          
+        FORMAT                  = "F8.3"                                      
+        DESCRIPTION             =                                             
+       "Solar zenith angle at the proximate point (the deepest level of the   
+        atmosphere probed by the radio beam), deg."                           
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "LOCAL_TIME"                                
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 7                                           
+        START_BYTE              = 101                                         
+        FORMAT                  = "F7.3"                                      
+        DESCRIPTION             =                                             
+       "Local time at the proximate point (the deepest level of the           
+        atmosphere probed by the radio beam), hours (1/24 local day)."        
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "ERT"                                       
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 10                                          
+        START_BYTE              = 108                                         
+        FORMAT                  = "F10.3"                                     
+        DESCRIPTION             =                                             
+       "Earth received time of the observation (UT, seconds after             
+        midnight)."                                                           
+    END_OBJECT                                                                
+END_OBJECT                                                                    
+END                                                                           
