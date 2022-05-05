@@ -1,0 +1,451 @@
+CCSD3ZF0000100000001NJPL3IF0PDS200000001 = SFDU_LABEL                         
+                                                                              
+RECORD_TYPE                    = FIXED_LENGTH                                 
+RECORD_BYTES                   = 328                                          
+FILE_RECORDS                   = 602                                          
+INTERCHANGE_FORMAT             = ASCII                                        
+                                                                              
+^TABLE                         = "VG2_S_NS.DAT"                               
+                                                                              
+DATA_SET_ID                    = "VG1/VG2-S-IRIS-5-NS-ATMOS-PARAMS-V1.0"      
+                                                                              
+DESCRIPTION                    =                                              
+     "This file was produced by the PDS Atmospheres node using PANDA from     
+      dataset Workshop data for user LEE on 31-Aug-1995 22:57:05.00 using     
+      the following SQL query against the Atmospheres database: SELECT        
+      DISTINCT * FROM S_VG_IRS_NS  WHERE  SC_ID = 'VG2' ORDER BY              
+      FDS_COUNT"                                                              
+                                                                              
+/* Table Description */                                                       
+                                                                              
+OBJECT                         = TABLE                                        
+    NAME                       = PANDA_QUERY_RESULT                           
+    INTERCHANGE_FORMAT         = ASCII                                        
+    COLUMNS                    = 39                                           
+    ROWS                       = 602                                          
+    ROW_BYTES                  = 329                                          
+    OBJECT                      = COLUMN                                      
+        NAME                    = "SC_ID"                                     
+        DATA_TYPE               = CHARACTER                                   
+        BYTES                   = 6                                           
+        START_BYTE              = 1                                           
+        FORMAT                  = "A6"                                        
+        DESCRIPTION             =                                             
+       "Spacecraft identification.  VG1(2) = Voyager 1(2)."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "FDS_COUNT"                                 
+        DATA_TYPE               = ASCII_INTEGER                               
+        BYTES                   = 10                                          
+        START_BYTE              = 7                                           
+        FORMAT                  = "I10"                                       
+        DESCRIPTION             =                                             
+       "Flight Data System Count (FDSC) is the number of 48 second data       
+        frames taken since an arbitrary epoch.  The final two digits are      
+        modulo 60.  This is the primary Voyager data identifier."             
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q5_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 17                                          
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is the point of intersection of    
+        the optic axis with the currently viewed picture body.  The           
+        remaining Q-points define the perimeter of the IRIS field of view     
+        as projected on the surface of the picture body."                     
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q5_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 25                                          
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "SLANT_DIST"                                
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 14                                          
+        START_BYTE              = 33                                          
+        FORMAT                  = "F14.1"                                     
+        DESCRIPTION             =                                             
+       "Slant distance between the spacecraft and the center (Q5 point) of    
+        the IRIS field of view on the planet"                                 
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "COS_EMISS"                                 
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 6                                           
+        START_BYTE              = 47                                          
+        FORMAT                  = "F6.2"                                      
+        DESCRIPTION             =                                             
+       "Cosine of the emission angle at the center of the IRIS field of       
+        view. The emssion angle is the angle between the local normal and     
+        the optic axis at the point of intersection of the latter with the    
+        surface of the currently viewed picture (target) body."               
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "EMISS_ANGLE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 53                                          
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Angle (degrees) between the local normal and the optic axis at the    
+        point of intersection of the latter with the surface of the           
+        currently viewed picture (target) body."                              
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "ZENITH_ANGLE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 61                                          
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Angle (degrees) between the local normal and the sun at the point     
+        of intersection of the instrument optic axis with the surface of      
+        the currently viewed picture (target) body."                          
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "RADIOMETER"                                
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 14                                          
+        START_BYTE              = 69                                          
+        FORMAT                  = "F14.10"                                    
+        DESCRIPTION             =                                             
+       "The broadband, reflected solar radiometer signal integrated over      
+        the 45.6 seconds that IRIS data are taken within the 48 second data   
+        frame.  The quantity given is power at the detector in Watts."        
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_216"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 83                                          
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Brightness temperature of the observed scene at 216 cm**-1"           
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_225"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 91                                          
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Brightness temperature of the observed scene at 225 cm**-1"           
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_250"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 99                                          
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Brightness temperature of the observed scene at 250 cm**-1"           
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_300"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 107                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Brightness temperature of the observed scene at 300 cm**-1"           
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_350"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 115                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Brightness temperature of the observed scene at 350 cm**-1"           
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_600"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 123                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Brightness temperature of the observed scene at 600 cm**-1, a         
+        methane band"                                                         
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_2050"                                 
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 131                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Brightness temperature of the observed scene at 2050 cm**-1. For      
+        Saturn, all values are 0.0."                                          
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_MB286"                                
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 139                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Atmospheric temperature at 286 mbar (level 11)"                       
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "TEMP_MB152"                                
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 147                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Atmospheric temperature at 152 mbar (level 13)"                       
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "OPACITY_2050"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 155                                         
+        FORMAT                  = "F8.3"                                      
+        DESCRIPTION             =                                             
+       "Cloud optical depth at 2050 cm**-1.  For Saturn, this parameter       
+        could not be calculated (flagged by -3)."                             
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "OPACITY_226"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 163                                         
+        FORMAT                  = "F8.3"                                      
+        DESCRIPTION             =                                             
+       "Cloud optical depth at 226 cm**-1.  For Saturn, this parameter        
+        could not be calculated (flagged by -3)."                             
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "FRAC_PARA_H"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 171                                         
+        FORMAT                  = "F8.3"                                      
+        DESCRIPTION             =                                             
+       "Para-hydrogen fraction (-1 indicates a bad value)"                    
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "FRAC_AMMONIA"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 179                                         
+        FORMAT                  = "F8.3"                                      
+        DESCRIPTION             =                                             
+       "Ammonia mole fraction at 600 mbar relative to solar value. For        
+        Saturn, this parameter could not be calculated (flagged by -3)."      
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "RESIDUAL"                                  
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 14                                          
+        START_BYTE              = 187                                         
+        FORMAT                  = "F14.12"                                    
+        DESCRIPTION             =                                             
+       "Radiance residual of the retrieval (H2-He).  This is a measure of     
+        the convergence of the retrieval calculations."                       
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q1_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 201                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q1_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 209                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q2_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 217                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q2_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 225                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q3_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 233                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q3_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 241                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the of the IRIS field of view        
+        projected on the surface of the picture body."                        
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q4_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 249                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q4_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 257                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q6_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 265                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q6_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 273                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q7_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 281                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q7_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 289                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q8_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 297                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q8_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 305                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q9_LATITUDE"                               
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 313                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "Planetographic latitude (deg).  Q5 is point of intersection of        
+        optic axis with currently viewed picture body. Remaining Q-points     
+        define perimeter of IRIS field of view as projected on the surface    
+        of the picture body. 200.0 indicates point is the planet."            
+    END_OBJECT                                                                
+    OBJECT                      = COLUMN                                      
+        NAME                    = "Q9_LONGITUDE"                              
+        DATA_TYPE               = ASCII_REAL                                  
+        BYTES                   = 8                                           
+        START_BYTE              = 321                                         
+        FORMAT                  = "F8.2"                                      
+        DESCRIPTION             =                                             
+       "West longitude (deg., System III, deep interior rotation period).     
+        Q5 is the point of intersection of the optic axis with the picture    
+        body.  Remaining Q-points define the perimeter of the IRIS field of   
+        view projected on the surface of the picture body."                   
+    END_OBJECT                                                                
+END_OBJECT                                                                    
+END                                                                           
